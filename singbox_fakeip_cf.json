@@ -102,6 +102,7 @@
       "type": "urltest",
       "tag": "Auto",
       "outbounds": [],
+      "url": "https://www.gstatic.com/generate_204",
       "interval": "5m",
       "tolerance": 150
     },

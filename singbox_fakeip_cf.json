@@ -102,8 +102,8 @@
       "type": "urltest",
       "tag": "Auto",
       "outbounds": [],
-      "interval": "3m",
-      "tolerance": 30
+      "interval": "5m",
+      "tolerance": 150
     },
     {
       "type": "selector",

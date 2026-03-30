@@ -11,7 +11,7 @@
     "servers": [
       {"tag":"proxy_dns","type":"https","server":"8.8.8.8","detour":"Default"},
       {"tag":"cn_dns","type":"udp","server":"114.114.114.114"},
-      {"tag":"fake_dns","type":"fakeip","inet4_range":"11.0.0.0/16","inet6_range":"3ffe::/16"}
+      {"tag":"fake_dns","type":"fakeip","inet4_range":"198.18.0.0/15","inet6_range":"3ffe::/16"}
     ],
     "rules": [
       {"type":"logical","mode":"or","rules":[{"domain_suffix":["ileidian.com",".cn"]},{"domain_keyword":["stun","turn"]},{"rule_set":"cnsite"}],"server":"cn_dns"},
@@ -60,8 +60,6 @@
       {"action":"sniff"},
       {"type":"logical","mode":"or","rules":[{"protocol":"dns"},{"port":53}],"action":"hijack-dns"},
       {"ip_is_private":true,"outbound":"Direct-Out"},
-      {"clash_mode":"direct","outbound":"Direct-Out"},
-      {"clash_mode":"global","outbound":"Default"},
       {"protocol":"quic","action":"reject"},
       {"protocol":"bittorrent","outbound":"Direct-Out"},
       {"port":[3478,5201],"outbound":"Direct-Out"},
@@ -80,7 +78,7 @@
       {"action":"resolve"},
       {"rule_set":"telegramip","outbound":"Telegram"},
       {"rule_set":"netflixip","outbound":"Streaming-Media"},
-      {"ip_cidr":["11.0.0.0/16","3ffe::/16"],"outbound":"Default"},
+      {"ip_cidr":["198.18.0.0/15","3ffe::/16"],"outbound":"Default"},
       {"rule_set":"cnip","outbound":"Direct-Out"}
     ],
     "rule_set": [
